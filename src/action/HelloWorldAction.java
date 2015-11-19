@@ -2,15 +2,20 @@ package action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-import bo.UserBo;
-
-public class HelloWorldAction extends ActionSupport{
+public class HelloWorldAction extends ActionSupport {
 	public final static String MESSAGE = "Struts2 is up and running ...helloworld!";
+	private String message;
 
-	UserBo userBo = new UserBo();
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
 
 	public String execute() throws Exception {
-		userBo.setMessage(MESSAGE);
-		return "SUCCESS";
+		setMessage(MESSAGE);
+		return "success";
 	}
 }
